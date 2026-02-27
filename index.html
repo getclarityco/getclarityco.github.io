@@ -245,6 +245,8 @@
       padding: 1.75rem;
       position: relative;
       transition: border-color 0.2s;
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover { border-color: var(--muted); }
@@ -295,6 +297,7 @@
     .card-features {
       list-style: none;
       margin-bottom: 1.5rem;
+      flex: 1;
     }
 
     .card-features li {
@@ -332,6 +335,13 @@
       padding: 0.55rem 1.1rem;
       border-radius: 6px;
       transition: opacity 0.2s;
+      cursor: pointer;
+    }
+
+    .card-btn.disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      pointer-events: none;
     }
 
     .btn-teal { background: var(--teal); color: var(--navy); }
@@ -369,7 +379,7 @@
       <a href="#story">Story</a>
       <a href="#products">Products</a>
       <a href="https://x.com/getclarityco" target="_blank">X</a>
-      <a href="https://lowlife7.gumroad.com" target="_blank" class="nav-cta">Shop</a>
+      <a href="https://lowlife7.gumroad.com/l/srjxdh" target="_blank" class="nav-cta">Shop</a>
     </div>
   </nav>
 
@@ -378,7 +388,7 @@
     <h1>Cut through the noise.<br><em>Move with clarity.</em></h1>
     <p>AI tools, prompt packs, and digital resources for people who want to think sharper and move faster. Built lean. Shipped real.</p>
     <div class="hero-actions">
-      <a href="https://lowlife7.gumroad.com" target="_blank" class="btn-primary">Browse Products</a>
+      <a href="https://lowlife7.gumroad.com/l/srjxdh" target="_blank" class="btn-primary">Browse Products</a>
       <a href="https://x.com/getclarityco" target="_blank" class="btn-ghost">Follow the journey</a>
     </div>
   </section>
@@ -431,7 +441,7 @@
         </ul>
         <div class="card-footer">
           <div class="price">$7</div>
-          <a href="https://lowlife7.gumroad.com" target="_blank" class="card-btn btn-teal">Get it</a>
+          <span class="card-btn btn-teal disabled">Coming Soon</span>
         </div>
       </div>
 
@@ -447,7 +457,7 @@
         </ul>
         <div class="card-footer">
           <div class="price">$12</div>
-          <a href="https://lowlife7.gumroad.com" target="_blank" class="card-btn btn-purple">Get it</a>
+          <span class="card-btn btn-purple disabled">Coming Soon</span>
         </div>
       </div>
 
