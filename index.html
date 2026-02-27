@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClarityHQ — Cut Through the Noise</title>
+  <style>
+    :root {
+      --navy: #0d1117;
+      --navy-light: #161b22;
+      --navy-border: #21262d;
+      --teal: #00c9a7;
+      --purple: #8b5cf6;
+      --gold: #f59e0b;
+      --white: #f0f6fc;
+      --muted: #8b949e;
+      --red: #f85149;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--navy-border);
+      position: sticky;
+      top: 0;
+      background: var(--navy);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span { color: var(--teal); }
+
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--teal);
+      color: var(--navy) !important;
+      font-weight: 600;
+      padding: 0.5rem 1.1rem;
+      border-radius: 6px;
+      font-size: 0.85rem !important;
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta:hover { opacity: 0.85; color: var(--navy) !important; }
+
+    /* HERO */
+    .hero {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--navy-light);
+      border: 1px solid var(--navy-border);
+      color: var(--teal);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 em { font-style: normal; color: var(--teal); }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: var(--navy);
+      font-weight: 700;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-ghost {
+      border: 1px solid var(--navy-border);
+      color: var(--muted);
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-ghost:hover { border-color: var(--muted); color: var(--white); }
+
+    /* METRICS */
+    .metrics {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1px;
+      background: var(--navy-border);
+      border: 1px solid var(--navy-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .metric {
+      background: var(--navy-light);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--teal);
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* STORY */
+    .story {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--navy-border);
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    .story h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .story p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .story p strong { color: var(--white); }
+
+    /* PRODUCTS */
+    .products {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--navy-border);
+    }
+
+    .products-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .products-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .products-header p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--navy-light);
+      border: 1px solid var(--navy-border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover { border-color: var(--muted); }
+
+    .card.featured {
+      border-color: var(--gold);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: -0.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .card-accent {
+      width: 36px;
+      height: 4px;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .accent-teal { background: var(--teal); }
+    .accent-purple { background: var(--purple); }
+    .accent-gold { background: var(--gold); }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .card-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-features li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--navy-border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-features li:last-child { border-bottom: none; }
+
+    .check { color: var(--teal); font-size: 0.75rem; }
+    .check-purple { color: var(--purple); font-size: 0.75rem; }
+    .check-gold { color: var(--gold); font-size: 0.75rem; }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+
+    .price {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .card-btn {
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.55rem 1.1rem;
+      border-radius: 6px;
+      transition: opacity 0.2s;
+    }
+
+    .btn-teal { background: var(--teal); color: var(--navy); }
+    .btn-purple { background: var(--purple); color: white; }
+    .btn-gold { background: var(--gold); color: var(--navy); }
+
+    .card-btn:hover { opacity: 0.85; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--navy-border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer a { color: var(--teal); }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      nav { padding: 1rem; }
+      .nav-links { gap: 1rem; }
+      .hero { padding: 3rem 1.25rem 2rem; }
+      .metrics { margin: 0 1.25rem 3rem; }
+      .story, .products { padding: 3rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Clarity<span>HQ</span></div>
+    <div class="nav-links">
+      <a href="#story">Story</a>
+      <a href="#products">Products</a>
+      <a href="https://x.com/getclarityco" target="_blank">X</a>
+      <a href="https://lowlife7.gumroad.com" target="_blank" class="nav-cta">Shop</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-badge">Building in Public</div>
+    <h1>Cut through the noise.<br><em>Move with clarity.</em></h1>
+    <p>AI tools, prompt packs, and digital resources for people who want to think sharper and move faster. Built lean. Shipped real.</p>
+    <div class="hero-actions">
+      <a href="https://lowlife7.gumroad.com" target="_blank" class="btn-primary">Browse Products</a>
+      <a href="https://x.com/getclarityco" target="_blank" class="btn-ghost">Follow the journey</a>
+    </div>
+  </section>
+
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-value" id="revenue">$0</div>
+      <div class="metric-label">Revenue</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value" id="products-count">3</div>
+      <div class="metric-label">Products</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value" id="sales">0</div>
+      <div class="metric-label">Sales</div>
+    </div>
+    <div class="metric">
+      <div class="metric-value" id="days">1</div>
+      <div class="metric-label">Days Live</div>
+    </div>
+  </div>
+
+  <section class="story" id="story">
+    <div class="section-label">Origin</div>
+    <h2>$100. One weekend. Built with the tools we sell.</h2>
+    <p>ClarityHQ started as a simple bet: <strong>could you launch a real digital products business with $100 and ruthless focus?</strong></p>
+    <p>No agency. No team. No months of planning. Just a domain, an AI that actually does the work, and a bias toward shipping over perfecting.</p>
+    <p>Every product, every post, every pricing decision was made fast and lean — using the same clarity principles baked into each pack. <strong>This brand is its own proof of concept.</strong></p>
+    <p>We're building in public. Revenue, lessons, what's working — all of it goes up on <a href="https://x.com/getclarityco" target="_blank" style="color:var(--teal);">X</a>. Follow along or grab a pack and get clear yourself.</p>
+  </section>
+
+  <section class="products" id="products">
+    <div class="products-header">
+      <div class="section-label">Products</div>
+      <h2>Pick your level of clarity</h2>
+      <p>Every tier steps up. The math is simple — each $5 more roughly doubles what you get.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-accent accent-teal"></div>
+        <h3>Clarity Starter</h3>
+        <p class="card-desc">10 focused productivity prompts. Get unstuck, get moving.</p>
+        <ul class="card-features">
+          <li><span class="check">&#10003;</span> 10 AI prompts</li>
+          <li><span class="check">&#10003;</span> Productivity category</li>
+          <li><span class="check">&#10003;</span> Instant PDF download</li>
+        </ul>
+        <div class="card-footer">
+          <div class="price">$7</div>
+          <a href="https://lowlife7.gumroad.com" target="_blank" class="card-btn btn-teal">Get it</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent accent-purple"></div>
+        <h3>Clarity Core</h3>
+        <p class="card-desc">25 prompts across 3 power categories for serious builders.</p>
+        <ul class="card-features">
+          <li><span class="check-purple">&#10003;</span> 25 AI prompts</li>
+          <li><span class="check-purple">&#10003;</span> Content Creation</li>
+          <li><span class="check-purple">&#10003;</span> Business Clarity</li>
+          <li><span class="check-purple">&#10003;</span> Decision Making</li>
+        </ul>
+        <div class="card-footer">
+          <div class="price">$12</div>
+          <a href="https://lowlife7.gumroad.com" target="_blank" class="card-btn btn-purple">Get it</a>
+        </div>
+      </div>
+
+      <div class="card featured">
+        <div class="card-badge">Best Value</div>
+        <div class="card-accent accent-gold"></div>
+        <h3>Clarity Vault</h3>
+        <p class="card-desc">50 prompts. All 5 categories. The complete operating system.</p>
+        <ul class="card-features">
+          <li><span class="check-gold">&#10003;</span> 50 AI prompts</li>
+          <li><span class="check-gold">&#10003;</span> All 5 categories</li>
+          <li><span class="check-gold">&#10003;</span> Writing &amp; Communications</li>
+          <li><span class="check-gold">&#10003;</span> Productivity included</li>
+        </ul>
+        <div class="card-footer">
+          <div class="price">$17</div>
+          <a href="https://lowlife7.gumroad.com/l/srjxdh" target="_blank" class="card-btn btn-gold">Get it</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Built lean. Shipped real. &mdash; <a href="https://x.com/getclarityco" target="_blank">@getclarityco</a> &mdash; &copy; 2026 ClarityHQ</p>
+  </footer>
+
+</body>
+</html>
