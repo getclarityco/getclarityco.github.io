@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClarityHQ — Cut Through the Noise</title>
+  <title>ClarityHQ - Cut Through the Noise</title>
   <style>
     :root {
       --navy: #0d1117;
       --navy-light: #161b22;
       --navy-border: #21262d;
       --teal: #00c9a7;
-      --purple: #8b5cf6;
       --gold: #f59e0b;
       --white: #f0f6fc;
       --muted: #8b949e;
-      --red: #f85149;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,7 +26,6 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* NAV */
     nav {
       display: flex;
       justify-content: space-between;
@@ -66,12 +63,10 @@
       padding: 0.5rem 1.1rem;
       border-radius: 6px;
       font-size: 0.85rem !important;
-      transition: opacity 0.2s !important;
     }
 
-    .nav-cta:hover { opacity: 0.85; color: var(--navy) !important; }
+    .nav-cta:hover { opacity: 0.85; }
 
-    /* HERO */
     .hero {
       max-width: 860px;
       margin: 0 auto;
@@ -124,7 +119,6 @@
       padding: 0.8rem 1.8rem;
       border-radius: 8px;
       font-size: 0.95rem;
-      transition: opacity 0.2s;
     }
 
     .btn-primary:hover { opacity: 0.85; }
@@ -135,12 +129,10 @@
       padding: 0.8rem 1.8rem;
       border-radius: 8px;
       font-size: 0.95rem;
-      transition: border-color 0.2s, color 0.2s;
     }
 
     .btn-ghost:hover { border-color: var(--muted); color: var(--white); }
 
-    /* STORY */
     .story {
       max-width: 680px;
       margin: 0 auto;
@@ -172,9 +164,8 @@
 
     .story p strong { color: var(--white); }
 
-    /* PRODUCTS */
     .products {
-      max-width: 960px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 4rem 2rem;
       border-top: 1px solid var(--navy-border);
@@ -216,9 +207,7 @@
 
     .card:hover { border-color: var(--muted); }
 
-    .card.featured {
-      border-color: var(--gold);
-    }
+    .card.featured { border-color: var(--gold); }
 
     .card-badge {
       position: absolute;
@@ -244,7 +233,6 @@
     }
 
     .accent-teal { background: var(--teal); }
-    .accent-purple { background: var(--purple); }
     .accent-gold { background: var(--gold); }
 
     .card h3 {
@@ -278,7 +266,6 @@
     .card-features li:last-child { border-bottom: none; }
 
     .check { color: var(--teal); font-size: 0.75rem; }
-    .check-purple { color: var(--purple); font-size: 0.75rem; }
     .check-gold { color: var(--gold); font-size: 0.75rem; }
 
     .card-footer {
@@ -299,23 +286,13 @@
       font-weight: 600;
       padding: 0.55rem 1.1rem;
       border-radius: 6px;
-      transition: opacity 0.2s;
-      cursor: pointer;
     }
-
-    .card-btn.disabled {
-      opacity: 0.45;
-      cursor: not-allowed;
-      pointer-events: none;
-    }
-
-    .btn-teal { background: var(--teal); color: var(--navy); }
-    .btn-purple { background: var(--purple); color: white; }
-    .btn-gold { background: var(--gold); color: var(--navy); }
 
     .card-btn:hover { opacity: 0.85; }
 
-    /* FOOTER */
+    .btn-teal { background: var(--teal); color: var(--navy); }
+    .btn-gold { background: var(--gold); color: var(--navy); }
+
     footer {
       border-top: 1px solid var(--navy-border);
       padding: 2rem;
@@ -326,7 +303,6 @@
 
     footer a { color: var(--teal); }
 
-    /* RESPONSIVE */
     @media (max-width: 600px) {
       nav { padding: 1rem; }
       .nav-links { gap: 1rem; }
@@ -342,85 +318,68 @@
     <div class="nav-links">
       <a href="#story">Story</a>
       <a href="#products">Products</a>
-      <a href="https://x.com/getclarityco" target="_blank">X</a>
-      <a href="https://lowlife7.gumroad.com" target="_blank" class="nav-cta">Shop</a>
+      <a href="https://x.com/getclarityco" target="_blank" rel="noopener">X</a>
+      <a href="https://lowlife7.gumroad.com" target="_blank" rel="noopener" class="nav-cta">Shop</a>
     </div>
   </nav>
 
   <section class="hero">
     <div class="hero-badge">Building in Public</div>
     <h1>Cut through the noise.<br><em>Move with clarity.</em></h1>
-    <p>AI tools, prompt packs, and digital resources for people who want to think sharper and move faster. Built lean. Shipped real.</p>
+    <p>Prompt packs in Notion for people who want to think sharper and ship faster. Start free. Buy the full set when you are ready.</p>
     <div class="hero-actions">
-      <a href="https://lowlife7.gumroad.com" target="_blank" class="btn-primary">Browse Products</a>
-      <a href="https://x.com/getclarityco" target="_blank" class="btn-ghost">Follow the journey</a>
+      <a href="https://sample.clarityhq.co" target="_blank" rel="noopener" class="btn-primary">Get the free sample</a>
+      <a href="https://x.com/getclarityco" target="_blank" rel="noopener" class="btn-ghost">Follow the journey</a>
     </div>
   </section>
-
 
   <section class="story" id="story">
     <div class="section-label">Origin</div>
     <h2>Built with the tools we sell.</h2>
     <p>ClarityHQ started with a simple idea: <strong>launch a real digital products business with ruthless focus.</strong></p>
-    <p>No agency. No team. Just an AI that actually does the work and a bias toward shipping over perfecting.</p>
-    <p>Every product, every post, every pricing decision was made fast and lean — using the same clarity principles baked into each pack. <strong>This brand is its own proof of concept.</strong></p>
-    <p>We're building in public. Revenue, lessons, what's working — all of it goes up on <a href="https://x.com/getclarityco" target="_blank" style="color:var(--teal);">X</a>. Follow along or grab a pack and get clear yourself.</p>
+    <p>No agency. No team. An AI that does the work and a bias toward shipping over perfecting.</p>
+    <p>Every product and pricing decision was made fast and lean, using the same prompts in the packs. <strong>This brand is its own proof of concept.</strong></p>
+    <p>We build in public. What works goes up on <a href="https://x.com/getclarityco" target="_blank" rel="noopener" style="color:var(--teal);">X</a>. Grab the sample or buy the Vault.</p>
   </section>
 
   <section class="products" id="products">
     <div class="products-header">
       <div class="section-label">Products</div>
-      <h2>Pick your level of clarity</h2>
-      <p>Every tier steps up. The math is simple — each $5 more roughly doubles what you get.</p>
+      <h2>Two packs. Same format.</h2>
+      <p>Copy a prompt. Fill in the brackets. Paste into your AI tool. Delivered in Notion.</p>
     </div>
 
     <div class="cards">
 
       <div class="card">
         <div class="card-accent accent-teal"></div>
-        <h3>Clarity Starter</h3>
-        <p class="card-desc">10 focused productivity prompts. Get unstuck, get moving.</p>
+        <h3>Clarity Sample</h3>
+        <p class="card-desc">7 prompts. Enough to use this week and see if the format fits.</p>
         <ul class="card-features">
-          <li><span class="check">&#10003;</span> 10 AI prompts</li>
-          <li><span class="check">&#10003;</span> Productivity category</li>
-          <li><span class="check">&#10003;</span> Instant PDF download</li>
+          <li><span class="check">&#10003;</span> 7 AI prompts</li>
+          <li><span class="check">&#10003;</span> Hooks, threads, repurposing</li>
+          <li><span class="check">&#10003;</span> Notion delivery</li>
         </ul>
         <div class="card-footer">
-          <div class="price">$7</div>
-          <a href="https://lowlife7.gumroad.com/l/clarity-starter" target="_blank" class="card-btn btn-teal">Get it</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-accent accent-purple"></div>
-        <h3>Clarity Core</h3>
-        <p class="card-desc">25 prompts across 3 power categories for serious builders.</p>
-        <ul class="card-features">
-          <li><span class="check-purple">&#10003;</span> 25 AI prompts</li>
-          <li><span class="check-purple">&#10003;</span> Content Creation</li>
-          <li><span class="check-purple">&#10003;</span> Business Clarity</li>
-          <li><span class="check-purple">&#10003;</span> Decision Making</li>
-        </ul>
-        <div class="card-footer">
-          <div class="price">$12</div>
-          <a href="https://lowlife7.gumroad.com/l/clarity-core" target="_blank" class="card-btn btn-purple">Get it</a>
+          <div class="price">Free</div>
+          <a href="https://sample.clarityhq.co" target="_blank" rel="noopener" class="card-btn btn-teal">Get it</a>
         </div>
       </div>
 
       <div class="card featured">
-        <div class="card-badge">Best Value</div>
+        <div class="card-badge">Full pack</div>
         <div class="card-accent accent-gold"></div>
         <h3>Clarity Vault</h3>
-        <p class="card-desc">50 prompts. All 5 categories. The complete operating system.</p>
+        <p class="card-desc">50 prompts. Five categories. The complete set, including the Sample.</p>
         <ul class="card-features">
           <li><span class="check-gold">&#10003;</span> 50 AI prompts</li>
-          <li><span class="check-gold">&#10003;</span> All 5 categories</li>
-          <li><span class="check-gold">&#10003;</span> Writing &amp; Communications</li>
-          <li><span class="check-gold">&#10003;</span> Productivity included</li>
+          <li><span class="check-gold">&#10003;</span> Content, business, decisions</li>
+          <li><span class="check-gold">&#10003;</span> Writing and productivity</li>
+          <li><span class="check-gold">&#10003;</span> Notion delivery</li>
         </ul>
         <div class="card-footer">
-          <div class="price">$17</div>
-          <a href="https://lowlife7.gumroad.com/l/clarity-pack" target="_blank" class="card-btn btn-gold">Get it</a>
+          <div class="price">$27</div>
+          <a href="https://lowlife7.gumroad.com/l/clarityvault" target="_blank" rel="noopener" class="card-btn btn-gold">Get it</a>
         </div>
       </div>
 
@@ -428,7 +387,7 @@
   </section>
 
   <footer>
-    <p>Built lean. Shipped real. &mdash; <a href="https://x.com/getclarityco" target="_blank">@getclarityco</a> &mdash; &copy; 2026 ClarityHQ</p>
+    <p>Built lean. Shipped real. <a href="https://x.com/getclarityco" target="_blank" rel="noopener">@getclarityco</a> &copy; 2026 ClarityHQ</p>
   </footer>
 
 </body>
