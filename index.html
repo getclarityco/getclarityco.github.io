@@ -15,6 +15,8 @@
       --muted: #8b949e;
     }
 
+    html { scroll-behavior: smooth; }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -138,6 +140,7 @@
       margin: 0 auto;
       padding: 4rem 2rem;
       border-top: 1px solid var(--navy-border);
+      scroll-margin-top: 5.5rem;
     }
 
     .section-label {
@@ -169,6 +172,7 @@
       margin: 0 auto;
       padding: 4rem 2rem;
       border-top: 1px solid var(--navy-border);
+      scroll-margin-top: 5.5rem;
     }
 
     .products-header {
@@ -314,10 +318,10 @@
 <body>
 
   <nav>
-    <div class="nav-logo">Clarity<span>HQ</span></div>
+    <a href="/" class="nav-logo">Clarity<span>HQ</span></a>
     <div class="nav-links">
-      <a href="#story">Story</a>
-      <a href="#products">Products</a>
+      <a href="/#story">Story</a>
+      <a href="/#products">Products</a>
       <a href="https://x.com/getclarityco" target="_blank" rel="noopener">X</a>
       <a href="https://shop.clarityhq.co" target="_blank" rel="noopener" class="nav-cta">Shop</a>
     </div>
@@ -389,6 +393,19 @@
   <footer>
     <p>Built lean. Shipped real. <a href="https://x.com/getclarityco" target="_blank" rel="noopener">@getclarityco</a> &copy; 2026 ClarityHQ</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('a[href*="#story"], a[href*="#products"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var id = link.getAttribute('href').split('#')[1];
+        var el = document.getElementById(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', '#' + id);
+      });
+    });
+  </script>
 
 </body>
 </html>
